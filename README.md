@@ -131,7 +131,7 @@ cd packages/cli && pnpm link --global
 
 ### 测试生成的项目
 
-由于 `@aury/web-core` 尚未发布到 npm，本地测试需要 link：
+由于 `@aurimyth/web-core` 尚未发布到 npm，本地测试需要 link：
 
 ```bash
 export ROOT=/path/to/aury-web

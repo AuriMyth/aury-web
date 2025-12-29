@@ -234,7 +234,7 @@ export * from './useSearch'
 **第三方库的配置和封装**
 
 #### 核心文件
-- **api-client.ts**: @aury/web-core API 客户端配置
+- **api-client.ts**: @aurimyth/web-core API 客户端配置
 - **utils.ts**: cn, clsx 等工具函数
 
 ## 文件命名规范

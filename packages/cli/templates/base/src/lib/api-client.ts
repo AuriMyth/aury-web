@@ -1,4 +1,4 @@
-import { AuryApiClient } from '@aury/web-core/api'
+import { AuryApiClient } from '@aurimyth/web-core/api'
 
 /**
  * API 客户端配置

@@ -73,14 +73,14 @@ function Component() {
 }
 ```
 
-## @aury/web-core Hooks
+## @aurimyth/web-core Hooks
 
 ### useAuryApi
 
 查询数据：
 
 ```typescript
-import { useAuryApi } from '@aury/web-core/hooks'
+import { useAuryApi } from '@aurimyth/web-core/hooks'
 
 const { data, isLoading, error, refetch } = useAuryApi<User[]>('/api/v1/users')
 ```
@@ -90,7 +90,7 @@ const { data, isLoading, error, refetch } = useAuryApi<User[]>('/api/v1/users')
 变更数据：
 
 ```typescript
-import { useAuryMutation } from '@aury/web-core/hooks'
+import { useAuryMutation } from '@aurimyth/web-core/hooks'
 
 const { mutate, isPending } = useAuryMutation<User, CreateUserDto>('/api/v1/users', {
   method: 'post',  // 'post' | 'put' | 'patch' | 'delete'
@@ -107,7 +107,7 @@ mutate({ name: '张三' })
 分页查询：
 
 ```typescript
-import { useAuryPagination } from '@aury/web-core/hooks'
+import { useAuryPagination } from '@aurimyth/web-core/hooks'
 
 const { data, isLoading } = useAuryPagination<User[]>('/api/v1/users', page, pageSize)
 ```

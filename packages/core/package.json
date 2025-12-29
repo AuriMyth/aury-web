@@ -1,5 +1,5 @@
 {
-  "name": "@aury/web-core",
+  "name": "@aurimyth/web-core",
   "version": "1.0.0",
   "description": "Core utilities and integrations for Aury Web projects",
   "type": "module",

@@ -8,7 +8,7 @@ A modern React application built with Aury Web.
 - **Vite 6** - Lightning-fast build tool
 - **TanStack Router v1** - Type-safe file-based routing
 - **TanStack Query v5** - Powerful data fetching
-- **@aury/web-core** - Backend integration utilities
+- **@aurimyth/web-core** - Backend integration utilities
 - **Tailwind CSS v4** - Utility-first CSS with Lightning CSS
 - **Shadcn UI** - Beautiful, accessible components
 - **TypeScript 5.7+** - Full type safety
@@ -30,9 +30,9 @@ pnpm build
 pnpm preview
 ```
 
-## @aury/web-core
+## @aurimyth/web-core
 
-This project uses `@aury/web-core` for seamless backend integration:
+This project uses `@aurimyth/web-core` for seamless backend integration:
 
 - **Automatic BaseResponse handling** - No manual unwrapping
 - **Type-safe API calls** - Full TypeScript support
@@ -41,7 +41,7 @@ This project uses `@aury/web-core` for seamless backend integration:
 ### Quick Example
 
 ```typescript
-import { useAuryApi } from '@aury/web-core/hooks'
+import { useAuryApi } from '@aurimyth/web-core/hooks'
 
 function UserList() {
   // Automatically handles BaseResponse { code, message, data }

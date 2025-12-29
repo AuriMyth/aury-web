@@ -1,5 +1,5 @@
-// 基础类型从 @aury/web-core 导入
-export { BaseResponse, PaginationResponse, AuryApiError } from '@aury/web-core/types'
+// 基础类型从 @aurimyth/web-core 导入
+export { BaseResponse, PaginationResponse, AuryApiError } from '@aurimyth/web-core/types'
 
 /**
  * 分页请求参数

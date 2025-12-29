@@ -67,11 +67,11 @@ export * from './useSearch'
 | 样式方案 | Tailwind CSS | v4 (Lightning CSS) |
 | UI 组件库 | Shadcn UI | 最新 (源代码形式) |
 | 表单处理 | React Hook Form + Zod | 最新 |
-| 后端集成 | @aury/web-core | v1 |
+| 后端集成 | @aurimyth/web-core | v1 |
 
-## @aury/web-core 核心库
+## @aurimyth/web-core 核心库
 
-**本项目使用 `@aury/web-core` 处理与后端的集成。**
+**本项目使用 `@aurimyth/web-core` 处理与后端的集成。**
 
 ### 后端 BaseResponse 格式
 
@@ -88,10 +88,10 @@ export * from './useSearch'
 
 ### 自动处理 BaseResponse
 
-`@aury/web-core` 自动解包 `data` 字段：
+`@aurimyth/web-core` 自动解包 `data` 字段：
 
 ```typescript
-import { useAuryApi, useAuryMutation } from '@aury/web-core/hooks'
+import { useAuryApi, useAuryMutation } from '@aurimyth/web-core/hooks'
 
 // 查询 - 自动解包，data 直接是 User[]
 const { data, isLoading, error } = useAuryApi<User[]>('/api/v1/users')
@@ -105,7 +105,7 @@ mutate({ name: '张三', email: 'test@example.com' })
 
 ```typescript
 // src/lib/api-client.ts
-import { AuryApiClient } from '@aury/web-core/api'
+import { AuryApiClient } from '@aurimyth/web-core/api'
 
 export const api = new AuryApiClient({
   baseURL: import.meta.env.VITE_API_BASE_URL,
@@ -121,7 +121,7 @@ export const api = new AuryApiClient({
 
 ### 1. API 请求规范
 
-**✅ 必须使用 @aury/web-core**：
+**✅ 必须使用 @aurimyth/web-core**：
 
 ```typescript
 // ✅ 正确 - 自动处理 BaseResponse
@@ -155,7 +155,7 @@ const { data } = useQuery({
 ```typescript
 // src/routes/users/$userId.tsx
 import { createFileRoute } from '@tanstack/react-router'
-import { useAuryApi } from '@aury/web-core/hooks'
+import { useAuryApi } from '@aurimyth/web-core/hooks'
 
 export const Route = createFileRoute('/users/$userId')({
   component: UserProfile
@@ -196,7 +196,7 @@ features/feature/
 
 ```typescript
 // features/feature/hooks/useFeatures.ts
-import { useAuryApi } from '@aury/web-core/hooks'
+import { useAuryApi } from '@aurimyth/web-core/hooks'
 import type { Feature } from '../types'
 
 export function useFeatures() {
@@ -390,7 +390,7 @@ touch src/features/products/{api.ts,types.ts,index.ts}
 
 # 2. 实现 Hook
 # features/products/hooks/useProducts.ts
-import { useAuryApi } from '@aury/web-core/hooks'
+import { useAuryApi } from '@aurimyth/web-core/hooks'
 
 export function useProducts() {
   return useAuryApi<Product[]>('/api/v1/products')
@@ -468,7 +468,7 @@ const { data } = useAuryApi<User[]>('/api/v1/users')  // 包含完整路径
 - **02-components.md** - 组件开发指南
 - **03-state-management.md** - 状态管理详解
 - **04-routing.md** - 路由系统详解
-- **05-api-client.md** - @aury/web-core 使用
+- **05-api-client.md** - @aurimyth/web-core 使用
 - **06-styling.md** - Tailwind CSS + Cyberpunk 主题
 - **07-forms.md** - React Hook Form + Zod 表单
 - **08-hooks.md** - 自定义 Hooks 指南
@@ -479,5 +479,5 @@ const { data } = useAuryApi<User[]>('/api/v1/users')  // 包含完整路径
 
 **Last Updated**: {{TIMESTAMP}}  
 **Project Version**: 0.1.0  
-**Core Library**: @aury/web-core v1.0.0  
+**Core Library**: @aurimyth/web-core v1.0.0  
 **Theme**: Cyberpunk / Glitch

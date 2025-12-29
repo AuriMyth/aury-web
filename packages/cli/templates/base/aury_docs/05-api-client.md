@@ -1,8 +1,8 @@
 # 05 - API 客户端
 
-## @aury/web-core
+## @aurimyth/web-core
 
-本项目使用 `@aury/web-core` 处理与后端的所有 API 交互。
+本项目使用 `@aurimyth/web-core` 处理与后端的所有 API 交互。
 
 ### 后端 BaseResponse 格式
 
@@ -19,7 +19,7 @@
 
 ```typescript
 // src/lib/api-client.ts
-import { AuryApiClient } from '@aury/web-core/api'
+import { AuryApiClient } from '@aurimyth/web-core/api'
 
 export const api = new AuryApiClient({
   baseURL: import.meta.env.VITE_API_BASE_URL,
@@ -40,7 +40,7 @@ api.axios.interceptors.request.use((config) => {
 ### 在 main.tsx 中注入
 
 ```typescript
-import { AuryApiProvider } from '@aury/web-core/providers'
+import { AuryApiProvider } from '@aurimyth/web-core/providers'
 import { api } from './lib/api-client'
 
 <AuryApiProvider client={api}>
@@ -53,7 +53,7 @@ import { api } from './lib/api-client'
 ### 查询数据
 
 ```typescript
-import { useAuryApi } from '@aury/web-core/hooks'
+import { useAuryApi } from '@aurimyth/web-core/hooks'
 
 function UserList() {
   const { data: users, isLoading, error } = useAuryApi<User[]>('/api/v1/users')
@@ -72,7 +72,7 @@ function UserList() {
 ### 变更数据
 
 ```typescript
-import { useAuryMutation } from '@aury/web-core/hooks'
+import { useAuryMutation } from '@aurimyth/web-core/hooks'
 
 function CreateUserForm() {
   const { mutate, isPending, error } = useAuryMutation<User, CreateUserDto>(
@@ -98,7 +98,7 @@ function CreateUserForm() {
 ### 分页查询
 
 ```typescript
-import { useAuryPagination } from '@aury/web-core/hooks'
+import { useAuryPagination } from '@aurimyth/web-core/hooks'
 
 function UserTable() {
   const [page, setPage] = useState(1)
@@ -115,7 +115,7 @@ function UserTable() {
 ## 错误处理
 
 ```typescript
-import { AuryApiError } from '@aury/web-core/types'
+import { AuryApiError } from '@aurimyth/web-core/types'
 
 try {
   const users = await api.get('/api/v1/users')

@@ -38,7 +38,7 @@ export type CreateUserDto = {
 ### hooks/useUsers.ts
 
 ```typescript
-import { useAuryApi, useAuryMutation } from '@aury/web-core/hooks'
+import { useAuryApi, useAuryMutation } from '@aurimyth/web-core/hooks'
 import type { User, CreateUserDto } from '../types'
 
 export function useUsers() {

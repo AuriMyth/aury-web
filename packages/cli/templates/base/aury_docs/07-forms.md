@@ -86,7 +86,7 @@ function LoginForm() {
 ## 与 API 集成
 
 ```tsx
-import { useAuryMutation } from '@aury/web-core/hooks'
+import { useAuryMutation } from '@aurimyth/web-core/hooks'
 
 function CreateUserForm() {
   const { mutate, isPending } = useAuryMutation<User, CreateUserDto>('/api/v1/users')

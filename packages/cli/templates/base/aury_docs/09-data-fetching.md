@@ -33,7 +33,7 @@ useEffect(() => {
 ### 查询数据
 
 ```typescript
-import { useAuryApi } from '@aury/web-core/hooks'
+import { useAuryApi } from '@aurimyth/web-core/hooks'
 
 function UserList() {
   const { data, isLoading, error } = useAuryApi<User[]>('/api/v1/users')
@@ -52,7 +52,7 @@ function UserList() {
 ### 变更数据
 
 ```typescript
-import { useAuryMutation } from '@aury/web-core/hooks'
+import { useAuryMutation } from '@aurimyth/web-core/hooks'
 import { useQueryClient } from '@tanstack/react-query'
 
 function CreateUser() {
@@ -220,7 +220,7 @@ const { data: orders } = useAuryApi<Order[]>(
 ### 场景5：分页
 
 ```typescript
-import { useAuryPagination } from '@aury/web-core/hooks'
+import { useAuryPagination } from '@aurimyth/web-core/hooks'
 
 function ProductList() {
   const [page, setPage] = useState(1)
