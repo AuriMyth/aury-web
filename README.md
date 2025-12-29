@@ -197,14 +197,14 @@ my-app/
 ## 🚀 发布
 
 ```bash
-# 首次发布需要登录
-npm login
+# 首次发布需要登录（使用官方源）
+npm login --registry https://registry.npmjs.org
 
 # 发布 CLI
-pnpm release:cli
+pnpm release:cli --registry https://registry.npmjs.org
 
 # 发布 core
-pnpm release:core
+pnpm release:core --registry https://registry.npmjs.org
 ```
 
 ## 📝 许可证

@@ -18,7 +18,9 @@
   "scripts": {
     "build": "tsup",
     "dev": "tsup --watch",
-    "typecheck": "tsc --noEmit"
+    "typecheck": "tsc --noEmit",
+    "prepublishOnly": "pnpm build",
+    "release": "pnpm build && pnpm publish --access public"
   },
   "dependencies": {
     "@tanstack/react-query": "^5.62.8",
