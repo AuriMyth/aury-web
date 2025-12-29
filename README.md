@@ -1,6 +1,6 @@
 # Create Aury Web
 
-🚀 现代化 React 脚手架工具，自带赛博朋克主题
+🚀 现代化 React 脚手架工具，多主题支持
 
 ## ✨ 特性
 
@@ -12,7 +12,7 @@
 - 🐻 **Zustand** - 轻量级状态管理
 - 📝 **React Hook Form + Zod** - 类型安全表单
 - 🎭 **Shadcn UI** - 精美、无障碍组件
-- 🌌 **赛博朋克主题** - 霉虹灯设计系统
+- 🎨 **多主题** - Minimalist Modern、Cyberpunk
 
 ## 📦 安装
 
@@ -122,58 +122,24 @@ git clone <repo-url>
 cd aury-web
 pnpm install
 
-# 构建 CLI
-pnpm build
+# 构建
+pnpm build  # 构建所有包
 
-# 全局链接（只需一次）
-pnpm setup  # 首次需要设置 pnpm 全局目录
-source ~/.zshrc  # 重新加载 shell 配置
-pnpm link --global
-
-# 开发模式 - 终端1：自动构建
-pnpm build --watch
-
-# 开发模式 - 终端2：测试命令
-cd ~/Desktop/test
-aury-web init test-project
-
-# 或者手动构建
-pnpm build  # 修改代码后手动构建
-aury-web init test  # 然后测试
+# 全局链接 CLIï¼只需一次ï¼
+cd packages/cli && pnpm link --global
 ```
 
-### 测试生成的项目（含 @aury/web-core）
+### 测试生成的项目
 
 由于 `@aury/web-core` 尚未发布到 npm，本地测试需要 link：
 
 ```bash
-# 1. 构建 core 包
-cd /path/to/aury-web
-pnpm build:core
+export ROOT=/path/to/aury-web
 
-# 2. 创建测试项目
-mkdir -p ~/Desktop/test && cd ~/Desktop/test
-node /path/to/aury-web/dist/index.js init my-test --skip-install --skip-components
-
-# 3. 进入项目并 link core
-cd my-test
-pnpm link /path/to/aury-web/packages/core
-
-# 4. 安装依赖
-pnpm install
-
-# 5. 启动开发服务器
-pnpm dev
-```
-
-**一键测试脚本**：
-
-```bash
-export ROOT=/Users/gao/Desktop/gitSource/aury-web
-
-cd $ROOT && pnpm build && pnpm build:core && \
+# 一键测试
+cd $ROOT && pnpm build && \
 rm -rf /tmp/aury-test && mkdir -p /tmp/aury-test && cd /tmp/aury-test && \
-node $ROOT/dist/index.js init . --skip-git --skip-install && \
+node $ROOT/packages/cli/dist/index.js init . --skip-git --skip-install && \
 pnpm link $ROOT/packages/core && \
 pnpm install && \
 npx shadcn@latest add button card -y && \
@@ -205,14 +171,8 @@ my-app/
 
 ## 🎨 主题
 
-### Cyberpunk（默认）
-- 霉虹色彩（青色、品红、电光绿）
-- 扫描线效果
-- 故障动画
-- 切角边框
-- 终端美学
-
-更多主题即将推出...
+- **Minimalist Modern**（默认）- 简洁设计，Electric Blue 渐变强调色
+- **Cyberpunk** - 霓虹色彩、扫描线、故障动画
 
 ## 🤖 AI 友好文档
 
@@ -236,37 +196,16 @@ my-app/
 
 ## 🚀 发布
 
-### 发布流程
-
 ```bash
-pnpm login --registry https://registry.npmjs.org/
+# 首次发布需要登录
+npm login
 
-# 1. 更新版本号
-pnpm version patch  # 或 minor / major
+# 发布 CLI
+pnpm release:cli
 
-# 2. 构建
-pnpm build
-pnpm build:core
-
-# 3. 发布 @aury/web-core
-cd packages/core
-pnpm publish --access public
-
-# 4. 发布 create-aury-web
-cd ../.. 
-pnpm publish --access public
-
-# 5. 推送 tag
-git push --tags
+# 发布 core
+pnpm release:core
 ```
-
-### 发布检查清单
-
-- [ ] 所有测试通过
-- [ ] 版本号已更新 (package.json, packages/core/package.json)
-- [ ] CHANGELOG 已更新
-- [ ] 构建成功
-- [ ] 本地测试通过
 
 ## 📝 许可证
 

@@ -10,9 +10,9 @@ const __dirname = path.dirname(__filename)
  * 获取模板目录路径
  */
 export function getTemplateDir(): string {
-  // tsup 打包后所有代码都在 dist/index.js
-  // 所以从 dist/ 到 templates/ 是 ../packages/cli/templates
-  return path.resolve(__dirname, '../packages/cli/templates')
+  // tsup 打包后代码在 packages/cli/dist/index.js
+  // templates 在 packages/cli/templates
+  return path.resolve(__dirname, '../templates')
 }
 
 /**

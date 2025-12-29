@@ -3,12 +3,8 @@
    "Clarity through structure, character through bold detail"
    ============================================ */
 
-@import "tailwindcss";
-
-/* ============================================
-   FONTS - Dual-Font System
-   ============================================ */
 @import url('https://fonts.googleapis.com/css2?family=Calistoga&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap');
+@import "tailwindcss";
 
 /* ============================================
    DESIGN TOKENS - CSS Custom Properties

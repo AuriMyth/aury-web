@@ -1,0 +1,58 @@
+{
+  "name": "create-aury-web",
+  "version": "0.1.0",
+  "description": "Create Aury Web - Modern React scaffolding CLI with multiple themes",
+  "type": "module",
+  "main": "./dist/index.js",
+  "bin": {
+    "create-aury-web": "./dist/index.js",
+    "aury-web": "./dist/index.js"
+  },
+  "files": [
+    "dist",
+    "templates"
+  ],
+  "scripts": {
+    "dev": "tsx watch src/index.ts",
+    "build": "tsup && node scripts/postbuild.js",
+    "typecheck": "tsc --noEmit",
+    "clean": "rm -rf dist",
+    "prepublishOnly": "pnpm build",
+    "release": "pnpm build && pnpm publish --access public"
+  },
+  "keywords": [
+    "react",
+    "vite",
+    "tailwindcss",
+    "tanstack",
+    "scaffold",
+    "cli",
+    "typescript"
+  ],
+  "author": "Aury Team",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/AuriMyth/create-aury-web",
+    "directory": "packages/cli"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  },
+  "dependencies": {
+    "@clack/prompts": "^0.11.0",
+    "commander": "^14.0.2",
+    "execa": "^9.6.1",
+    "fast-glob": "^3.3.3",
+    "fs-extra": "^11.3.3",
+    "pathe": "^2.0.3",
+    "picocolors": "^1.1.1"
+  },
+  "devDependencies": {
+    "@types/fs-extra": "^11.0.4",
+    "@types/node": "^22.0.0",
+    "tsup": "^8.5.1",
+    "tsx": "^4.21.0",
+    "typescript": "^5.7.0"
+  }
+}

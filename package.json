@@ -1,40 +1,18 @@
 {
-  "name": "create-aury-web",
-  "version": "0.1.0",
-  "description": "Create Aury Web - Modern React scaffolding tool with Cyberpunk theme",
+  "name": "aury-web-monorepo",
+  "version": "0.0.0",
+  "private": true,
+  "description": "Aury Web monorepo",
   "type": "module",
-  "main": "./dist/index.js",
-  "bin": {
-    "create-aury-web": "./dist/index.js",
-    "aury-web": "./dist/index.js"
-  },
-  "files": [
-    "dist",
-    "packages/cli/templates"
-  ],
   "scripts": {
-    "dev": "tsx watch src/index.ts",
-    "build": "tsup && node scripts/postbuild.js",
+    "build": "pnpm -r build",
+    "build:cli": "cd packages/cli && pnpm build",
     "build:core": "cd packages/core && pnpm build",
-    "build:all": "pnpm build && pnpm build:core",
-    "build:watch": "tsup --watch --onSuccess \"node scripts/postbuild.js\"",
-    "typecheck": "tsc --noEmit",
-    "test:local": "pnpm link --global",
-    "clean": "rm -rf dist",
-    "prepublishOnly": "pnpm build",
-    "release": "pnpm build:all && pnpm publish --access public",
-    "release:core": "cd packages/core && pnpm publish --access public"
+    "typecheck": "pnpm -r typecheck",
+    "clean": "pnpm -r clean",
+    "release:cli": "cd packages/cli && pnpm release",
+    "release:core": "cd packages/core && pnpm release"
   },
-  "keywords": [
-    "react",
-    "vite",
-    "tailwindcss",
-    "tanstack",
-    "scaffold",
-    "cli",
-    "cyberpunk",
-    "typescript"
-  ],
   "author": "Aury Team",
   "license": "MIT",
   "repository": {
@@ -42,25 +20,10 @@
     "url": "https://github.com/AuriMyth/create-aury-web"
   },
   "engines": {
-    "node": ">=20.19.0",
-    "pnpm": ">=9.0.0"
+    "node": ">=18.0.0"
   },
   "packageManager": "pnpm@10.13.0",
-  "dependencies": {
-    "@clack/prompts": "^0.11.0",
-    "commander": "^14.0.2",
-    "execa": "^9.6.1",
-    "ora": "^9.0.0",
-    "picocolors": "^1.1.1",
-    "fast-glob": "^3.3.3",
-    "fs-extra": "^11.3.3",
-    "pathe": "^2.0.3"
-  },
   "devDependencies": {
-    "@types/fs-extra": "^11.0.4",
-    "@types/node": "^25.0.3",
-    "tsup": "^8.5.1",
-    "tsx": "^4.21.0",
-    "typescript": "^5.9.3"
+    "typescript": "^5.7.0"
   }
 }
